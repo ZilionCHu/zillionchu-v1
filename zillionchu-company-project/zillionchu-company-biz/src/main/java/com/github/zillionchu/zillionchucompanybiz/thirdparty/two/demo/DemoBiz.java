@@ -14,6 +14,7 @@ public class DemoBiz extends BaseBiz implements DemoAPI, LoggerBase {
 
     @Override
     public void test(@RequestBody DemoEntity demoEntity) {
+        info("Demobiz into test method");
         execute();
     }
 
