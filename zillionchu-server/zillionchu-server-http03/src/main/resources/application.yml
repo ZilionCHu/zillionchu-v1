@@ -1,0 +1,14 @@
+###服务启动端口号
+server:
+  port: 8503
+###服务名称(服务注册到eureka名称)  
+eureka:
+  client:
+    service-url:
+           defaultZone: http://localhost:8100/eureka
+
+
+  
+spring:
+  application:
+    name:  zilionchu-server-http02

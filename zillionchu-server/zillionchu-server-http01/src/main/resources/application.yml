@@ -1,0 +1,45 @@
+###服务启动端口号
+server:
+  port: 8501
+###服务名称(服务注册到eureka名称)
+  tomcat:
+    max-threads: 20
+#  ribbon:
+#    ReadTimeout: 30000
+#    ConnectTimeout: 30000
+eureka:
+  client:
+    service-url:
+           defaultZone: http://localhost:8100/eureka
+
+spring:
+  application:
+    name:  zilionchu-server-http01
+url:
+  feign:
+    zilionchu-server-http02
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 15000
+  ConnectTimeout: 15000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 10
+  OkToRetryOnAllOperations: true
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 1000 ##并发执行的最大线程数，默认10
+      maxQueueSize: 1000 ##BlockingQueue的最大队列数
+      queueSizeRejectionThreshold: 500 ##即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+
+#  profiles:
+#    active: dev

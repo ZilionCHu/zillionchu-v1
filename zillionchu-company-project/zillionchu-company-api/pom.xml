@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.zillionchu</groupId>
+            <artifactId>zillionchu-company-api-dto</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.zillionchu</groupId>
+            <artifactId>zillionchu-company-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <parent>
+        <groupId>com.github.zillionchu</groupId>
+        <artifactId>zillionchu-company-project</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>com.github.zillionchu</groupId>
+    <artifactId>zillionchu-company-api</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>zillionchu-company-api</name>
+    <description>Demo project for Spring Boot</description>
+
+</project>

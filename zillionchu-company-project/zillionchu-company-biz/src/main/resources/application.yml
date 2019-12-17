@@ -1,0 +1,39 @@
+###服务启动端口号
+server:
+  port: 9091
+#eureka:
+#  client:
+#    service-url:
+#           defaultZone: http://localhost:9090/eureka
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka
+
+spring:
+  application:
+    name:  app-thirdparty-biz
+
+
+#外部配置集合
+thirdparty:
+    config:
+        manMade: true  # 挡板开关
+        url-v: fixed1
+        url:
+          credit:
+              prex:
+                 dev-fixed: http://20.200.43.147:8814/creditplatform/commonHandle/   #dev-fixed 定版环境
+                 dev-preview: http://20.200.56.163:8814/creditplatform/commonHandle/   #dev-preview 预演环境
+                 pro-env: http://20.200.56.163:8814/creditplatform/commonHandle/   #dev-preview 预演环境
+              sufx:
+                credit-customer: CCLJ_ScpcdCustomerMessage  # 客户接口
+                credit-ious: CCLJ_ScpcdBorrowMessage   # 借据接口
+                credit-margin: CCLJ_ScpcdSecurityMoneyAcct   #保证金账户接口
+                credit-carinfo: CCLJ_ScpcdFinacingCars  #融资车辆接口
+
+
+
+
+
