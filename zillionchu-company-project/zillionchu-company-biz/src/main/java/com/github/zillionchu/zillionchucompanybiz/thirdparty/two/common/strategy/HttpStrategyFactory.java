@@ -14,7 +14,7 @@ public class HttpStrategyFactory {
 
     private static Map<String, HttpStrategy> strategyMapBean = Maps.newConcurrentMap();
 
-    public HttpStrategy getHttpStrategy(String classWay) {
+    public static HttpStrategy getHttpStrategy(String classWay) {
         try {
             if (Strings.isBlank(classWay)) {
                 return null;
