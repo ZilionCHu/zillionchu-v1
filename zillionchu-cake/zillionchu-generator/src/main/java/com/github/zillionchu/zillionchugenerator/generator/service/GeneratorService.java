@@ -1,6 +1,7 @@
 package com.github.zillionchu.zillionchugenerator.generator.service;
 
 
+import com.github.zillionchu.zillionchugenerator.generator.entity.XxlApiExcelSql;
 import com.github.zillionchu.zillionchugenerator.generator.mapper.GeneratorMapper;
 import com.github.zillionchu.zillionchugenerator.generator.utils.GeneratorUtils;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
@@ -57,4 +58,12 @@ public class GeneratorService {
 		IOUtils.closeQuietly(zip);
 		return outputStream.toByteArray();
 	}
+
+	/**
+	 * 保存上传excel并生成sql文件信息
+	 */
+	public void addExcelSql(XxlApiExcelSql xxlApiExcelSql){
+		generatorMapper.addExcelSql(xxlApiExcelSql);
+	}
+
 }

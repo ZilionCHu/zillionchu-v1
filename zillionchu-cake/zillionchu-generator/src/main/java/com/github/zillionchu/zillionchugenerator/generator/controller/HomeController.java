@@ -25,4 +25,8 @@ public class HomeController{
     public String user(){
         return "generator/list";
     }
+    @RequestMapping(value = "gengertorsql",method = RequestMethod.GET)
+    public String exce(){
+        return "generatorSql/gengertorsql";
+    }
 }
