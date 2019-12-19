@@ -3,6 +3,8 @@ server:
   port: 8502
 ###服务名称(服务注册到eureka名称)  
 eureka:
+#  instance:
+#    prefer-ip-address: true
   client:
     service-url:
            defaultZone: http://localhost:8100/eureka
@@ -11,4 +13,4 @@ eureka:
   
 spring:
   application:
-    name:  zilionchu-server-http02
+    name: zilionchu-server-http02

@@ -1,8 +1,11 @@
-package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.demo;
+package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api;
 
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.DemoEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.Map;
 
 /**
  * @Auther: ZiLlionChu
@@ -14,6 +17,6 @@ public interface DemoAPI {
 
     @ApiOperation(value = "This is test method")
     @PostMapping("/demo")
-    void test(DemoEntity demoEntity);
+    Map test(DemoEntity demoEntity);
 
 }

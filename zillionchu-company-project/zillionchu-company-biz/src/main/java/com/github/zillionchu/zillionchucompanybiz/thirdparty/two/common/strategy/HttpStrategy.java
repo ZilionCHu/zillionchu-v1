@@ -9,11 +9,14 @@ public interface HttpStrategy<R, T> {
 
     T httpRequest(R r);
 
+    String APPLICATION_NAME = "zilionchu-server-http02";
 
-    String URL_PREFIX = "http://";
-
-    default String getURl(String suffix) {
-        return URL_PREFIX + suffix;
+    default String getURl() {
+        return "http://" + APPLICATION_NAME + "/";
     }
+
+
+
+    String url="http://zilionchu-server-http02/";
 
 }

@@ -8,15 +8,17 @@ import org.springframework.stereotype.Component;
 /**
  * @Auther: ZiLlionChu
  * @Date: 2019/12/17 14:27
- * @Description: 接口限流
+ * @Description: 黑名单
  */
 @Component
-public class LimitRequestHandler extends BaseHandler implements ExecuteHandler , LoggerBase {
+public class BlackRequestHandler extends BaseHandler implements ExecuteHandler , LoggerBase {
 
     @Override
     public void executeBiz() {
-     info("###########################Start  one");
+     info("###########################Start  black one");
      nextExeCuteHandler.executeBiz();
+
+
     }
 
 

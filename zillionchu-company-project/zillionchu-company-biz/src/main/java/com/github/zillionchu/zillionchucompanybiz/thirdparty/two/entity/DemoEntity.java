@@ -1,4 +1,4 @@
-package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.demo;
+package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity;
 
 import lombok.Data;
 import lombok.ToString;
@@ -10,7 +10,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class DemoEntity {
+public class DemoEntity extends BaseEntity{
 
     private String demo;
 
