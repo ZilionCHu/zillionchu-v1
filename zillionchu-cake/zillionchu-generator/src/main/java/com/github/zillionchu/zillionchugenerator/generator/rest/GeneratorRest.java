@@ -3,6 +3,7 @@ package com.github.zillionchu.zillionchugenerator.generator.rest;
 import com.alibaba.fastjson.JSON;
 import com.github.zillionchu.zillionchugenerator.generator.entity.TableResultResponse;
 import com.github.zillionchu.zillionchugenerator.generator.service.GeneratorService;
+import com.github.zillionchu.zillionchugenerator.generator.utils.ExcelGenaSqlUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,7 +46,6 @@ public class GeneratorRest {
         tableNames = JSON.parseArray(tables).toArray(tableNames);
 
         byte[] data = generatorService.generatorCode(tableNames);
-
         response.reset();
         response.setHeader("Content-Disposition", "attachment; filename=\"ag-admin-code.zip\"");
         response.addHeader("Content-Length", "" + data.length);

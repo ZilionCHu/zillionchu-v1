@@ -3,6 +3,7 @@ package ${package}.entity;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
+import com.tansun.thirdparty.base.CreditRequestBaseDto;
 #if(${hasBigDecimal})
 import java.math.BigDecimal;
 #end
@@ -15,8 +16,9 @@ import java.math.BigDecimal;
  * @email ${email}
  * @date ${datetime}
  */
-@Table(name = "${tableName}")
-public class ${className} implements Serializable {
+${Data}
+${ToString}
+public class ${className} implements Serializable extends ${CreditRequestBaseDto} {
 	private static final long serialVersionUID = 1L;
 	
 #foreach ($column in $columns)
@@ -26,7 +28,9 @@ public class ${className} implements Serializable {
     private $column.attrType $column.attrname;
 	#else
     //$column.comments
-    @Column(name = "$column.columnName")
+    @ApiModelProperty(value = "$column.comments", name = "$column.columnName")
+    @NotNull(message = "$column.comments 不能为空!")
+    @Max(value = $column.characterMaximumLength, message = "$column.comments超长")
     private $column.attrType $column.attrname;
 	#end
 

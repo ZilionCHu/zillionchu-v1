@@ -36,7 +36,7 @@ public class ExcelGeraSqlController {
     @Autowired
     private GeneratorService generatorService;
 
-    private static final String filePath="C:/Users/createTable/CreateSql.txt";
+    private static final String filePath="C:/Users/Lenovo/Desktop/createTable/CreateSql.txt";
 
     @RequestMapping("/uploadFile")
     @ResponseBody

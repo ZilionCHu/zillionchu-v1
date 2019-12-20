@@ -21,7 +21,18 @@ public class ColumnEntity {
     private String attrType;
     //auto_increment
     private String extra;
-    
+
+    //字段大小
+    private String characterMaximumLength;
+
+	public String getCharacterMaximumLength() {
+		return characterMaximumLength;
+	}
+
+	public void setCharacterMaximumLength(String characterMaximumLength) {
+		this.characterMaximumLength = characterMaximumLength;
+	}
+
 	public String getColumnName() {
 		return columnName;
 	}

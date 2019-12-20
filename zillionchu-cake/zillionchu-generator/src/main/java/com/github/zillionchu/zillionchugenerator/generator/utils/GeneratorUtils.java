@@ -64,6 +64,12 @@ public class GeneratorUtils {
             columnEntity.setComments(column.get("columnComment"));
             columnEntity.setExtra(column.get("extra"));
 
+            if(column.get("characterMaximumLength")==null||"".equals(column.get("characterMaximumLength"))){
+                columnEntity.setCharacterMaximumLength("");
+            }else{
+                System.out.println("转化过后的值：====="+String.valueOf(column.get("characterMaximumLength")));
+                columnEntity.setCharacterMaximumLength(String.valueOf(column.get("characterMaximumLength")));
+            }
             //列名转换成Java属性名
             String attrName = columnToJava(columnEntity.getColumnName());
             columnEntity.setAttrName(attrName);
@@ -107,6 +113,11 @@ public class GeneratorUtils {
         map.put("datetime", DateUtils.format(new Date(), DateUtils.DATE_TIME_PATTERN));
         map.put("moduleName", config.getString("mainModule"));
         map.put("secondModuleName", toLowerCaseFirstOne(className));
+        //增加字段大小
+       // map.put("characterMaximumLength", tableEntity.getColumns());
+        map.put("ToString",  config.getString("ToString"));
+        map.put("Data",  config.getString("Data"));
+        map.put("CreditRequestBaseDto",  config.getString("CreditRequestBaseDto"));
         VelocityContext context = new VelocityContext(map);
 
         //获取模板列表
