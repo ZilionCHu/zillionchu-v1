@@ -120,6 +120,7 @@ public class GeneratorUtils {
         map.put("ToString",  config.getString("ToString"));
         map.put("Data",  config.getString("Data"));
         map.put("CreditRequestBaseDto",  config.getString("CreditRequestBaseDto"));
+        map.put("HttpPost",  config.getString("HttpPost"));
         VelocityContext context = new VelocityContext(map);
 
         //获取模板列表
