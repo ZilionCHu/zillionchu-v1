@@ -15,7 +15,7 @@ import java.util.Map;
  * @date ${datetime}
  */
 @Api(tags = "get$className")
-public interface ${className}Api {
+public interface ${className}API {
 
 
     /**
