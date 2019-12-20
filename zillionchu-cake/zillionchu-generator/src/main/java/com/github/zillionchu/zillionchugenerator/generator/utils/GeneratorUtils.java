@@ -35,6 +35,8 @@ public class GeneratorUtils {
         templates.add("template/entity.java.vm");
         templates.add("template/mapper.java.vm");
         templates.add("template/controller.java.vm");
+        //新增api接口
+        templates.add("template/api.java.vm");
         return templates;
     }
 
@@ -200,8 +202,13 @@ public class GeneratorUtils {
         if (template.contains("controller.java.vm")) {
             return packagePath + "rest" + File.separator + className + "Controller.java";
         }
+
         if (template.contains("mapper.xml.vm")) {
             return "main" + File.separator + "resources" + File.separator + "mapper" + File.separator + className + "Mapper.xml";
+        }
+
+        if (template.contains("api.java.vm")) {
+            return packagePath + "api" + File.separator + className + "Api.java";
         }
 
         return null;

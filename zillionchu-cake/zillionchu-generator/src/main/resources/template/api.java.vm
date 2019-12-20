@@ -1,0 +1,28 @@
+package package ${package}.api;
+import com.tansun.thirdparty.common.BaseResponse;
+import ${package}.${className};
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import java.util.Map;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@Api(tags = "get$className")
+public interface ${className}Api {
+
+
+    /**
+     * @param  ${className}
+     */
+    @PostMapping("get$className")
+    @ApiOperation(value = "get$className")
+    BaseResponse<Map<String,Object>> get${className}Info(@RequestBody ${className} paramDto);
+
+}
