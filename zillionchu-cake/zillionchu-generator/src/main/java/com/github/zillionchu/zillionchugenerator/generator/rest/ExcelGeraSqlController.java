@@ -66,7 +66,7 @@ public class ExcelGeraSqlController {
                 generatorService.addExcelSql(xxlApiExcelSql);
 
                 s = ExcelGenaSqlUtils.excelGreateSql(table, filePath);
-
+                map.put("sqlContent",table);
             }else{
                 System.out.println("文件类型错误!");
                 map.put("code",1);

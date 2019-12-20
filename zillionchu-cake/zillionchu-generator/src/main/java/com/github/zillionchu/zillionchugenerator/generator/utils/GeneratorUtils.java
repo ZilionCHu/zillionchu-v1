@@ -13,11 +13,10 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.StringWriter;
+import java.io.*;
 import java.util.*;
 import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 /**
@@ -59,6 +58,11 @@ public class GeneratorUtils {
 
         //列信息
         List<ColumnEntity> columsList = new ArrayList<>();
+        //文件解压
+        FileOutputStream fos = null;
+        ZipInputStream zis = null;
+        InputStream is = null;
+
         for (Map<String, String> column : columns) {
             ColumnEntity columnEntity = new ColumnEntity();
             columnEntity.setColumnName(column.get("columnName"));
@@ -137,6 +141,9 @@ public class GeneratorUtils {
                 IOUtils.write(sw.toString(), zip, "UTF-8");
                 IOUtils.closeQuietly(sw);
                 zip.closeEntry();
+
+                //解压文件存放在指定的目录
+
             } catch (IOException e) {
                 throw new RuntimeException("渲染模板失败，表名：" + tableEntity.getTableName(), e);
             }
