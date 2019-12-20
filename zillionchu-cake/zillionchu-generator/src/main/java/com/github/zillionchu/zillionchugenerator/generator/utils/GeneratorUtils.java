@@ -194,6 +194,7 @@ public class GeneratorUtils {
             return packagePath + "mapper" + File.separator + className + "Mapper.java";
         }
         if (template.contains("entity.java.vm")) {
+            System.out.println("实体名称：======"+ packagePath +  File.separator + className + ".java");
             return packagePath + "entity" + File.separator + className + ".java";
         }
         if (template.contains("controller.java.vm")) {
