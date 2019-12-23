@@ -20,6 +20,15 @@ spring:
     name:  app-thirdparty-biz
 
 
+swagger:
+  # 公共信息
+  enabled: true
+  title: 汽车金融二期-接口文档
+  description: zillionchu-api <a>www.baidu.com</>
+  version: 0.1-SNAPSHOT
+
+
+
 #外部配置集合
 thirdparty:
     config:
