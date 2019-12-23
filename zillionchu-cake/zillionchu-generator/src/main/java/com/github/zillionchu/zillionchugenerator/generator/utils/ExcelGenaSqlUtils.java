@@ -41,9 +41,25 @@ public class ExcelGenaSqlUtils {
         for (int i = 1; i <= rowNumber; i++) {
             ExcelCallModel excelCallModel = new ExcelCallModel();
             row = sheet.getRow(i);
-            excelCallModel.setFieldNm(row.getCell(0).toString());
+            if (row.getCell(0).toString()==null||"".equals(row.getCell(0).toString())){
+                 continue;
+            }else {
+                excelCallModel.setFieldNm(row.getCell(0).toString());
+            }
+            if (row.getCell(1).toString()==null||"".equals(row.getCell(1).toString())){
+                continue;
+            }else {
+                excelCallModel.setFieldSize(row.getCell(1).toString());
+            }
+            if (row.getCell(2).toString()==null||"".equals(row.getCell(2).toString())){
+                continue;
+            }else {
+                excelCallModel.setFieldDis(row.getCell(2).toString());
+            }
+
+           /* excelCallModel.setFieldNm(row.getCell(0).toString());
             excelCallModel.setFieldSize(row.getCell(1).toString());
-            excelCallModel.setFieldDis(row.getCell(2).toString());
+            excelCallModel.setFieldDis(row.getCell(2).toString());*/
             sheet.removeRow(row);
             list.add(excelCallModel);
         }

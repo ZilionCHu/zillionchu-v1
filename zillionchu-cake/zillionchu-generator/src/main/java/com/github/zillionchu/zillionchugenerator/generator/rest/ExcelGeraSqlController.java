@@ -56,7 +56,7 @@ public class ExcelGeraSqlController {
                 FileInputStream fis = (FileInputStream)multipartFile.getInputStream();
                 Workbook wb = new HSSFWorkbook(fis);
                 //调用工具类生成sql文件
-                String table = ExcelGenaSqlUtils.createTable("", wb, multipartFile.getName());
+                String table = ExcelGenaSqlUtils.createTable("", wb, originalFilename);
 
                 XxlApiExcelSql xxlApiExcelSql = new XxlApiExcelSql();
                 xxlApiExcelSql.setUploadFileContant(eexcelbytes); //excel文件输入流

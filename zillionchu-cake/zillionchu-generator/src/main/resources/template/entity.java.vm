@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 import com.tansun.thirdparty.base.CreditRequestBaseDto;
-#if(${hasBigDecimal})
-import java.math.BigDecimal;
-#end
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.ToString;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 
 
 /**
@@ -18,7 +20,7 @@ import java.math.BigDecimal;
  */
 ${Data}
 ${ToString}
-public class ${className} implements Serializable extends ${CreditRequestBaseDto} {
+public class ${className} extends ${CreditRequestBaseDto} implements Serializable  {
 	private static final long serialVersionUID = 1L;
 	
 #foreach ($column in $columns)

@@ -34,6 +34,8 @@ public class GeneratorUtils {
         templates.add("template/entity.java.vm");
         templates.add("template/mapper.java.vm");
         templates.add("template/controller.java.vm");
+        templates.add("template/httfeign.java.vm");
+        templates.add("template/httppost.java.vm");
         //新增api接口
         templates.add("template/api.java.vm");
         return templates;
@@ -120,11 +122,15 @@ public class GeneratorUtils {
         map.put("moduleName", config.getString("mainModule"));
         map.put("secondModuleName", toLowerCaseFirstOne(className));
         //增加字段大小
-       // map.put("characterMaximumLength", tableEntity.getColumns());
         map.put("ToString",  config.getString("ToString"));
         map.put("Data",  config.getString("Data"));
         map.put("CreditRequestBaseDto",  config.getString("CreditRequestBaseDto"));
         map.put("HttpPost",  config.getString("HttpPost"));
+        map.put("lombokData",  config.getString("lombokData"));
+        map.put("lombokString",  config.getString("lombokString"));
+        map.put("feign",  config.getString("feign"));
+        map.put("httpserver",  config.getString("httpserver"));
+        map.put("httpserverpath",  config.getString("httpserverpath"));
         VelocityContext context = new VelocityContext(map);
 
         //获取模板列表
@@ -216,7 +222,13 @@ public class GeneratorUtils {
         }
 
         if (template.contains("api.java.vm")) {
-            return packagePath + "api" + File.separator + className + "Api.java";
+            return packagePath + "api" + File.separator + className + "API.java";
+        }
+        if (template.contains("httfeign.java.vm")) {
+            return packagePath + "feign" + File.separator + className + "Feign.java";
+        }
+        if (template.contains("httppost.java.vm")) {
+            return packagePath + "common.strategy.impl" + File.separator + className + "HttpPost.java";
         }
 
         return null;

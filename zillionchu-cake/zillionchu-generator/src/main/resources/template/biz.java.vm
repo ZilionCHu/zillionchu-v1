@@ -2,8 +2,8 @@ package ${package}.biz;
 import com.alibaba.fastjson.JSON;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api.${className}API;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.base.BaseBiz;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.${className};
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.strategy.HttpStrategy;
-import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.DemoEntity;
 import com.github.zillionchu.zillionchucompanycore.thirdparty.common.LoggerBase;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,13 +15,13 @@ import java.util.Map;
  * @Description: API接口的具体业务实现
  */
 @RestController
-public class ${className}Biz extends BaseBiz<${className}Entity, Map> implements ${className}API, LoggerBase {
+public class ${className}Biz extends BaseBiz<${className}, Map> implements ${className}API, LoggerBase {
 
     @Resource(name = "$className$HttpPost")
     HttpStrategy httpStrategy;
 
     @Override
-    public Map test(@RequestBody ${className}Entity paramEntity) {
+    public Map get${className}(@RequestBody ${className} paramEntity) {
         info("Demobiz into test method");
         Map execute = execute(paramEntity);
         info("DemoBiz test result is {}: ", JSON.toJSON(execute));
