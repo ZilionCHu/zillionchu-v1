@@ -4,9 +4,16 @@ import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.strategy
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.DemoEntity;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.feign.DemoFeign;
 import com.github.zillionchu.zillionchucompanycore.thirdparty.common.LoggerBase;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.netflix.hystrix.*;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicHeader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,16 +26,31 @@ import java.util.Map;
  * @Description:
  */
 @Component
-public class DemoHttpPost implements HttpStrategy<DemoEntity, Map>, LoggerBase {
+public class DemoHttpPost extends AbstractOpenApiService implements HttpStrategy<DemoEntity, Map>, LoggerBase {
 
     @Autowired
     DemoFeign demoFeign;
 
+
     private static final String H_HYSTRIXCOMMAND_GROUPKEY = "DdemoBiz";
+
+
+    static RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(3000)
+            .setSocketTimeout(3000).build();
+
+    static CloseableHttpClient client = HttpClients.custom().setDefaultRequestConfig(requestConfig)
+            .setDefaultHeaders(Lists.newArrayList(new BasicHeader("Authorization", "1a2b3c5d"))).build();
+    static Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").create();
+
+
+    DemoHttpPost() {
+        super(client, "", gson);
+    }
 
 
     @Override
     public Map httpRequest(DemoEntity demoEntity) {
+
         return new DemoHttpPost.DemoPostHystrixCommand(demoFeign).execute();
     }
 
@@ -39,7 +61,7 @@ public class DemoHttpPost implements HttpStrategy<DemoEntity, Map>, LoggerBase {
 
         protected DemoPostHystrixCommand(DemoFeign demoFeign) {
             super(setter());
-            this.demoFeign=demoFeign;
+            this.demoFeign = demoFeign;
         }
 
         @Override
