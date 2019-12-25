@@ -25,9 +25,9 @@ public class FinancinginfodtoBiz extends BaseBiz<Financinginfodto, Map> implemen
 
     @Override
     public Map getFinancinginfodto(@RequestBody Financinginfodto paramEntity) {
-        info("Demobiz into test method");
+        info("FinancinginfodtoBiz into getFinancinginfodto method");
         Map execute = execute(paramEntity);
-        info("DemoBiz test result is {}: ", JSON.toJSON(execute));
+        info("FinancinginfodtoBiz getFinancinginfodto result is {}: ", JSON.toJSON(execute));
         return execute;
     }
 

@@ -26,9 +26,9 @@ public class WarrantyinfodtoBiz extends BaseBiz<Warrantyinfodto, Map> implements
 
     @Override
     public Map getWarrantyinfodto(@RequestBody Warrantyinfodto paramEntity) {
-        info("Demobiz into test method");
+        info("WarrantyinfodtoBiz into getWarrantyinfodto method");
         Map execute = execute(paramEntity);
-        info("DemoBiz test result is {}: ", JSON.toJSON(execute));
+        info("WarrantyinfodtoBiz getWarrantyinfodto result is {}: ", JSON.toJSON(execute));
         return execute;
     }
 

@@ -15,7 +15,7 @@ import java.util.Map;
  * @email 463540703@qq.com
  * @date 2019-12-24 16:08:00
  */
-@Api(tags = "汽车金融-融资信息接口",description = "融资信息接口主要对融资要术进行描述")
+@Api(tags = "汽车金融-融资信息接口",description = "融资信息接口主要是Rest APi集成Swagger的基础参照案例")
 public interface FinancinginfodtoAPI {
 
 
