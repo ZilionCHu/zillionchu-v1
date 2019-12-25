@@ -1,9 +1,6 @@
 package ${package}.entity;
 
 import java.io.Serializable;
-import java.util.Date;
-import javax.persistence.*;
-import com.tansun.thirdparty.base.CreditRequestBaseDto;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.ToString;
@@ -31,7 +28,6 @@ public class ${className} extends ${CreditRequestBaseDto} implements Serializabl
 	#else
     //$column.comments
     @ApiModelProperty(value = "$column.comments", name = "$column.columnName")
-    @NotNull(message = "$column.comments 不能为空!")
     @Max(value = $column.characterMaximumLength, message = "$column.comments超长")
     private $column.attrType $column.attrname;
 	#end

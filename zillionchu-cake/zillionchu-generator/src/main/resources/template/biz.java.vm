@@ -17,7 +17,8 @@ import java.util.Map;
 @RestController
 public class ${className}Biz extends BaseBiz<${className}, Map> implements ${className}API, LoggerBase {
 
-    @Resource(name = "$className$HttpPost")
+    @Autowired
+    private  ${className}HttpPost tHttpPost;
     HttpStrategy httpStrategy;
 
     @Override
