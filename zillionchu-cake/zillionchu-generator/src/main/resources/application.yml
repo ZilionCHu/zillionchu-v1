@@ -19,8 +19,13 @@ spring:
     thymeleaf:
         mode: LEGACYHTML5
         cache: false
+    mvc:
+        favicon:
+            enabled: false
 
 # Mybatis配置
 mybatis:
     mapperLocations: classpath:mapper/**/*.xml
+
+
 
