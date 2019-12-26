@@ -9,14 +9,12 @@ public interface HttpStrategy<R, T> {
 
     T httpRequest(R r);
 
-    String APPLICATION_NAME = "zilionchu-server-http02";
+    String APPLICATION_NAME = "zilionchu-server-http02:8502";
+    String APPLICATION_NAME_LOCL = "127.0.0.1:8502";
 
     default String getURl() {
-        return "http://" + APPLICATION_NAME + "/";
+        return "http://" + APPLICATION_NAME_LOCL + "/%s";
+
     }
-
-
-
-    String url="http://zilionchu-server-http02/";
 
 }

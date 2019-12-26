@@ -13,7 +13,7 @@ import lombok.ToString;
 @Data
 @ToString
 @ApiModel(value = "Demo请求参数",description = "Demo请求参数")
-public class DemoEntity extends BaseEntity{
+public class DemoInputDto extends BaseEntity{
 
     @ApiModelProperty(value = "年龄",required = true,example = "28")
     private String demo;

@@ -1,7 +1,8 @@
 package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api;
 
 import com.github.zillionchu.zillionchucompanyapidto.thirdparty.credit.output.dto.CreditCarInfoOutDto;
-import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.DemoEntity;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.DemoInputDto;
+import com.github.zillionchu.zillionchucompanycore.thirdparty.common.BaseResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,6 @@ public interface DemoAPI {
 
     @ApiOperation(value = "Demo Test测试接口",notes = "该方法主要是Demo管理test接口！",response = CreditCarInfoOutDto.class)
     @PostMapping("/demo")
-    Map test(DemoEntity demoEntity);
+    BaseResponse<Map<String,Object>> test(DemoInputDto demoInputDto);
 
 }

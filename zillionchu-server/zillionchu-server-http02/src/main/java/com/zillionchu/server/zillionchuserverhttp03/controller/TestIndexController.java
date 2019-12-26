@@ -1,5 +1,6 @@
 package com.zillionchu.server.zillionchuserverhttp03.controller;
 
+import com.alibaba.fastjson.JSON;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -28,6 +29,7 @@ public class TestIndexController {
     @PostMapping("indexPost")
     public Object indexPost(@RequestBody Map param) throws InterruptedException {
         System.out.println("into ....................");
+        System.out.println("into  param   is   :"+JSON.toJSON(param));
        // Map<String, Object> hashMap = new HashMap<String, Object>();
         param.put("code", 200);
         param.put("msg", "Http02  Index");

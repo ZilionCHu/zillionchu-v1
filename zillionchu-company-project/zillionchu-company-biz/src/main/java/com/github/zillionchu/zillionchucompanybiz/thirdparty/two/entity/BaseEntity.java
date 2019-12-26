@@ -1,5 +1,6 @@
 package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity;
 
+import com.github.zillionchu.zillionchucompanyapidto.thirdparty.base.CreditRequestBaseDto;
 import lombok.Data;
 import lombok.ToString;
 
@@ -10,5 +11,5 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class BaseEntity {
+public class BaseEntity extends CreditRequestBaseDto {
 }
