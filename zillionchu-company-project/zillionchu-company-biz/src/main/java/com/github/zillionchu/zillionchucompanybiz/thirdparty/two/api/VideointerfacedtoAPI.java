@@ -13,17 +13,17 @@ import java.util.Map;
  *
  * @author Mr.AG
  * @email 463540703@qq.com
- * @date 2019-12-23 17:28:53
+ * @date 2019-12-24 10:50:29
  */
-@Api(tags = "getVideointerfacedto")
+@Api(tags = "汽车金融-影像重发接口",description = "影像重发接口主要功能支持相关附件重新发送")
 public interface VideointerfacedtoAPI {
 
 
     /**
      * @param  Videointerfacedto
      */
-    @PostMapping("/getVideointerfacedto")
-    @ApiOperation(value = "getVideointerfacedto")
+    @PostMapping("getVideointerfacedto")
+    @ApiOperation(value = "getVideointerfacedto",notes = "该方法主要是影像重发接口管理indexPost接口！",response = Videointerfacedto.class)
     Map getVideointerfacedto(@RequestBody Videointerfacedto paramDto);
 
 }

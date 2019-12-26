@@ -1,6 +1,8 @@
 package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity;
 
 import java.io.Serializable;
+import java.util.List;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.ToString;
@@ -10,27 +12,31 @@ import javax.validation.constraints.NotNull;
 
 /**
  * 
- * 影像重发实体类
+ * 
  * @author Mr.AG
  * @email 463540703@qq.com
- * @date 2019-12-23 17:28:53
+ * @date 2019-12-24 18:46:35
  */
 @Data
 @ToString
-public class Videointerfacedto extends BaseEntity implements Serializable  {
+public class Entrstdpybacdto extends BaseEntity implements Serializable  {
 	private static final long serialVersionUID = 1L;
 
+	@ApiModelProperty(value = "受托支付列表")
+	private List<Entrstdpylistdto> list;
+	
 	    //借据编号
     @ApiModelProperty(value = "借据编号", name = "DEBIT_I_D")
-    @NotNull(message = "借据编号 不能为空!")
     @Max(value = 40, message = "借据编号超长")
     private String debitID;
-	
-	    //nihao
-    @ApiModelProperty(value = "影像索引", name = "IMG_INDX")
-    @NotNull(message = "影像索引 不能为空!")
-    @Max(value = 2000, message = "影像索引超长")
-    private String imgIndx;
+
+	public List<Entrstdpylistdto> getList() {
+		return list;
+	}
+
+	public void setList(List<Entrstdpylistdto> list) {
+		this.list = list;
+	}
 
 	/**
 	 * 设置：借据编号
@@ -43,17 +49,5 @@ public class Videointerfacedto extends BaseEntity implements Serializable  {
 	 */
 	public String getDebitID() {
 		return debitID;
-	}
-	/**
-	 * 设置：nihao
-	 */
-	public void setImgIndx(String imgIndx) {
-		this.imgIndx = imgIndx;
-	}
-	/**
-	 * 获取：nihao
-	 */
-	public String getImgIndx() {
-		return imgIndx;
 	}
 }

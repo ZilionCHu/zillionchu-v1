@@ -1,10 +1,12 @@
-package ${package}.biz;
+package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.biz;
 import com.alibaba.fastjson.JSON;
-import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api.${className}API;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api.EntrstdpybacdtoAPI;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.base.BaseBiz;
-import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.${className};
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.strategy.impl.EntrstdpybacdtoHttpPost;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.Entrstdpybacdto;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.strategy.HttpStrategy;
 import com.github.zillionchu.zillionchucompanycore.thirdparty.common.LoggerBase;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
@@ -15,17 +17,17 @@ import java.util.Map;
  * @Description: API接口的具体业务实现
  */
 @RestController
-public class ${className}Biz extends BaseBiz<${className}, Map> implements ${className}API, LoggerBase {
+public class EntrstdpybacdtoBiz extends BaseBiz<Entrstdpybacdto, Map> implements EntrstdpybacdtoAPI, LoggerBase {
 
     @Autowired
-    private  ${className}HttpPost tHttpPost;
+    private EntrstdpybacdtoHttpPost tHttpPost;
     HttpStrategy httpStrategy;
 
     @Override
-    public Map get${className}(@RequestBody ${className} paramEntity) {
-        info("Demobiz into test method");
+    public Map getEntrstdpybacdto(@RequestBody Entrstdpybacdto paramEntity) {
+        info("EntrstdpybacdtoBiz into getEntrstdpybacdto method");
         Map execute = execute(paramEntity);
-        info("DemoBiz test result is {}: ", JSON.toJSON(execute));
+        info("EntrstdpybacdtoBiz getEntrstdpybacdto result is {}: ", JSON.toJSON(execute));
         return execute;
     }
 

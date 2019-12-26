@@ -1,10 +1,12 @@
 package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.biz;
 import com.alibaba.fastjson.JSON;
-import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api.VideointerfacedtoAPI;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api.CargomortgagedtoAPI;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.base.BaseBiz;
-import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.Videointerfacedto;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.strategy.impl.CargomortgagedtoHttpPost;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.Cargomortgagedto;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.strategy.HttpStrategy;
 import com.github.zillionchu.zillionchucompanycore.thirdparty.common.LoggerBase;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
@@ -15,16 +17,17 @@ import java.util.Map;
  * @Description: API接口的具体业务实现
  */
 @RestController
-public class VideointerfacedtoBiz extends BaseBiz<Videointerfacedto, Map> implements VideointerfacedtoAPI, LoggerBase {
+public class CargomortgagedtoBiz extends BaseBiz<Cargomortgagedto, Map> implements CargomortgagedtoAPI, LoggerBase {
 
-    @Resource(name = "videointerfacedtoHttpPost")
+    @Autowired
+    private CargomortgagedtoHttpPost tHttpPost;
     HttpStrategy httpStrategy;
 
     @Override
-    public Map getVideointerfacedto(@RequestBody Videointerfacedto paramEntity) {
-        info("VideointerfacedtoBiz into getVideointerfacedto method");
+    public Map getCargomortgagedto(@RequestBody Cargomortgagedto paramEntity) {
+        info("Cargomortgagedtobiz into getCargomortgagedto method");
         Map execute = execute(paramEntity);
-        info("VideointerfacedtoBiz getVideointerfacedto result is {}: ", JSON.toJSON(execute));
+        info("CargomortgagedtoBiz getCargomortgagedt result is {}: ", JSON.toJSON(execute));
         return execute;
     }
 

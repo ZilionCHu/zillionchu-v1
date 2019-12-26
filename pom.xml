@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>zillionchu-springcloud-basic</module>
+        <!--<module>zillionchu-springcloud-basic</module>-->
         <module>zillionchu-core</module>
         <module>zillionchu-server</module>
         <module>zillionchu-test</module>

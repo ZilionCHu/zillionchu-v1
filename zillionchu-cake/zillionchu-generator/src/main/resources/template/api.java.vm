@@ -15,15 +15,15 @@ import java.util.Map;
  * @email ${email}
  * @date ${datetime}
  */
-@Api(tags = "get$className")
+@Api(tags = "汽车金融-${className}接口",description = "${className}接口主要是Rest APi集成Swagger的基础参照案例")
 public interface ${className}API {
 
 
     /**
      * @param  ${className}
      */
-    @PostMapping("/get$className")
-    @ApiOperation(value = "get$className")
+    @PostMapping("get$className")
+    @ApiOperation(value = "get$className",notes = "该方法主要是${className}管理${httpserverpath}接口！",response = ${className}.class)
     Map get${className}(@RequestBody ${className} paramDto);
 
 }
