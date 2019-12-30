@@ -1,6 +1,6 @@
 package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.biz;
 import com.alibaba.fastjson.JSON;
-import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api.VideointerfacedtoAPI;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api.VideointerfacedtoApi;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.base.BaseBiz;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.Videointerfacedto;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.strategy.HttpStrategy;
@@ -15,7 +15,7 @@ import java.util.Map;
  * @Description: API接口的具体业务实现
  */
 @RestController
-public class VideointerfacedtoBiz extends BaseBiz<Videointerfacedto, Map> implements VideointerfacedtoAPI, LoggerBase {
+public class VideointerfacedtoBiz extends BaseBiz<Videointerfacedto, Map> implements VideointerfacedtoApi, LoggerBase {
 
     @Resource(name = "videointerfacedtoHttpPost")
     HttpStrategy httpStrategy;

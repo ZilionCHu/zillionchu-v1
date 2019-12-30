@@ -22,11 +22,12 @@ public class ${className}Biz extends BaseBiz<${className}, Map> implements ${cla
     HttpStrategy httpStrategy;
 
     @Override
-    public Map get${className}(@RequestBody ${className} paramEntity) {
-        info("Demobiz into test method");
+    public BaseResponse<Map<String, Object>> extends BaseBiz<{className}, Map> get${className}(@RequestBody ${className} paramEntity) {
+        info("http    post  Request  dto   is :{}", JSONObject.toJSONString(paramEntity));
+        BaseResponse result = new BaseResponse();
         Map execute = execute(paramEntity);
-        info("DemoBiz test result is {}: ", JSON.toJSON(execute));
-        return execute;
+        result.setSuccess(execute);
+        return result;
     }
 
     @Override

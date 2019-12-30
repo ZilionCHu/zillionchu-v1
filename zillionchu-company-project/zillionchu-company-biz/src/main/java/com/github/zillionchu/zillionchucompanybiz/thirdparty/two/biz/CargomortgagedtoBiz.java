@@ -1,6 +1,6 @@
 package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.biz;
 import com.alibaba.fastjson.JSON;
-import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api.CargomortgagedtoAPI;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.api.CargomortgagedtoApi;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.base.BaseBiz;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.strategy.impl.CargomortgagedtoHttpPost;
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.Cargomortgagedto;
@@ -9,7 +9,7 @@ import com.github.zillionchu.zillionchucompanycore.thirdparty.common.LoggerBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import javax.annotation.Resource;
+
 import java.util.Map;
 /**
  * @Auther: ZiLlionChu
@@ -17,7 +17,7 @@ import java.util.Map;
  * @Description: API接口的具体业务实现
  */
 @RestController
-public class CargomortgagedtoBiz extends BaseBiz<Cargomortgagedto, Map> implements CargomortgagedtoAPI, LoggerBase {
+public class CargomortgagedtoBiz extends BaseBiz<Cargomortgagedto, Map> implements CargomortgagedtoApi, LoggerBase {
 
     @Autowired
     private CargomortgagedtoHttpPost tHttpPost;

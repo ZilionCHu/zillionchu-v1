@@ -1,8 +1,8 @@
 package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.strategy.impl;
 
 import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.common.strategy.HttpStrategy;
-import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.Warrantyinfodto;
-import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.feign.WarrantyinfodtoFeign;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity.Cargomortgagedto;
+import com.github.zillionchu.zillionchucompanybiz.thirdparty.two.feign.CargomortgagedtoFeign;
 import com.github.zillionchu.zillionchucompanycore.thirdparty.common.LoggerBase;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -19,25 +19,25 @@ import java.util.Map;
  * @Description:
  */
 @Component
-public class WarrantyinfodtoHttpPost implements HttpStrategy<Warrantyinfodto, Map>, LoggerBase {
+public class CargomortgagedtoHttpPost implements HttpStrategy<Cargomortgagedto, Map>, LoggerBase {
 
     @Autowired
-    WarrantyinfodtoFeign demoFeign;
+    CargomortgagedtoFeign demoFeign;
 
-    private static final String H_HYSTRIXCOMMAND_GROUPKEY = "WarrantyinfodtoHttpPost";
+    private static final String H_HYSTRIXCOMMAND_GROUPKEY = "CargomortgagedtoHttpPost";
 
 
     @Override
-    public Map httpRequest(Warrantyinfodto demoEntity) {
-        return new WarrantyinfodtoPostHystrixCommand(demoFeign).execute();
+    public Map httpRequest(Cargomortgagedto demoEntity) {
+        return new CargomortgagedtoPostHystrixCommand(demoFeign).execute();
     }
 
 
-    static class WarrantyinfodtoPostHystrixCommand extends HystrixCommand<Map> implements LoggerBase {
+    static class CargomortgagedtoPostHystrixCommand extends HystrixCommand<Map> implements LoggerBase {
 
-        private WarrantyinfodtoFeign demoFeign;
+        private CargomortgagedtoFeign demoFeign;
 
-        protected WarrantyinfodtoPostHystrixCommand(WarrantyinfodtoFeign demoFeign) {
+        protected CargomortgagedtoPostHystrixCommand(CargomortgagedtoFeign demoFeign) {
             super(setter());
             this.demoFeign=demoFeign;
         }
@@ -47,7 +47,7 @@ public class WarrantyinfodtoHttpPost implements HttpStrategy<Warrantyinfodto, Ma
             Map forObject = null;
             try {
                 forObject = (Map) demoFeign.indexPost(Maps.asMap(Sets.newHashSet("1", "2"), s -> s + "v"));
-                info("****************WarrantyinfodtoHttpPost:"+forObject);
+                info("****************DemoHttpPost:"+forObject);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -62,9 +62,9 @@ public class WarrantyinfodtoHttpPost implements HttpStrategy<Warrantyinfodto, Ma
             // 服务分组
             HystrixCommandGroupKey groupKey = HystrixCommandGroupKey.Factory.asKey(H_HYSTRIXCOMMAND_GROUPKEY);
             // 服务标识
-            HystrixCommandKey commandKey = HystrixCommandKey.Factory.asKey("WarrantyinfodtoBiz");
+            HystrixCommandKey commandKey = HystrixCommandKey.Factory.asKey("CargomortgagedtoBiz");
             // 线程池名称
-            HystrixThreadPoolKey threadPoolKey = HystrixThreadPoolKey.Factory.asKey("WarrantyinfodtoBiz-pool");
+            HystrixThreadPoolKey threadPoolKey = HystrixThreadPoolKey.Factory.asKey("CargomortgagedtoBiz-pool");
             // 线程池配置 线程池大小为10,线程存活时间15秒 队列等待的阈值为100,超过100执行拒绝策略
             HystrixThreadPoolProperties.Setter threadPoolProperties =
                     HystrixThreadPoolProperties.Setter().withCoreSize(10)

@@ -24,6 +24,6 @@ public interface ${className}API {
      */
     @PostMapping("get$className")
     @ApiOperation(value = "get$className",notes = "该方法主要是${className}管理${httpserverpath}接口！",response = ${className}.class)
-    Map get${className}(@RequestBody ${className} paramDto);
+    BaseResponse<Map<String, Object>>  get${className}(@RequestBody ${className} paramDto);
 
 }

@@ -59,7 +59,7 @@ public class GeneratorUtils {
         tableEntity.setClassname(StringUtils.uncapitalize(className));
 
         //列信息
-        List<ColumnEntity> columsList = new ArrayList<>();
+        List<ColumnEntity> columsList = new ArrayList<ColumnEntity>();
         //文件解压
         FileOutputStream fos = null;
         ZipInputStream zis = null;
@@ -107,7 +107,7 @@ public class GeneratorUtils {
         Velocity.init(prop);
 
         //封装模板数据
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<String, Object>();
         map.put("tableName", tableEntity.getTableName());
         map.put("comments", tableEntity.getComments());
         map.put("pk", tableEntity.getPk());
