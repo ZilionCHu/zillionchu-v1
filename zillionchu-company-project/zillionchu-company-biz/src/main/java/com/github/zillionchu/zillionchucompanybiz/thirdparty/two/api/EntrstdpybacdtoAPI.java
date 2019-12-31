@@ -16,7 +16,7 @@ import java.util.Map;
  * @date 2019-12-24 18:46:35
  */
 @Api(tags = "汽车金融-受托支付接口",description = "受托支付接口主要委托支付功能")
-public interface EntrstdpybacdtoAPI {
+public interface EntrstdpybacdtoApi {
 
 
     /**

@@ -16,7 +16,7 @@ import java.util.Map;
  * @date 2019-12-24 10:50:29
  */
 @Api(tags = "汽车金融-影像重发接口",description = "影像重发接口主要功能支持相关附件重新发送")
-public interface VideointerfacedtoAPI {
+public interface VideointerfacedtoApi {
 
 
     /**

@@ -16,7 +16,7 @@ import java.util.Map;
  * @date 2019-12-24 17:14:12
  */
 @Api(tags = "汽车金融-货押商品目录查询接口",description = "货押商品目录查询接口主要查询公贷系统货押商品目录")
-public interface CargomortgagedtoAPI {
+public interface CargomortgagedtoApi {
 
 
     /**

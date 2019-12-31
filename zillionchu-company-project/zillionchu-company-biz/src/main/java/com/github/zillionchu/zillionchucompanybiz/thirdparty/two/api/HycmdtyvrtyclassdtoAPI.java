@@ -15,7 +15,7 @@ import java.util.Map;
  * @date 2019-12-24 17:41:03
  */
 @Api(tags = "汽车金融-货押商品品种查询接口",description = "货押商品品种查询接口主要查询货物抵押商品种类")
-public interface HycmdtyvrtyclassdtoAPI {
+public interface HycmdtyvrtyclassdtoApi {
 
 
     /**

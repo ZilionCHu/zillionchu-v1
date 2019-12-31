@@ -16,7 +16,7 @@ import java.util.Map;
  * @date 2019-12-24 14:54:54
  */
 @Api(tags = "汽车金融-担保信息接口",description = "担保信息接口主要做融资担保")
-public interface WarrantyinfodtoAPI {
+public interface WarrantyinfodtoApi {
 
 
     /**
