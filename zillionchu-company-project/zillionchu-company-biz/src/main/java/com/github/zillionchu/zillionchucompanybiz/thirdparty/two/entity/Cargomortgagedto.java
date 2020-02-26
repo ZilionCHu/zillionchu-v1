@@ -1,8 +1,9 @@
 package com.github.zillionchu.zillionchucompanybiz.thirdparty.two.entity;
 
-import java.io.Serializable;
 import lombok.Data;
 import lombok.ToString;
+
+import java.io.Serializable;
 /**
  * 
  * 货物抵押商品根目录接口查询条件
