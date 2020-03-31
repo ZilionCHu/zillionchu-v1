@@ -21,6 +21,7 @@ public class CargomortgagedtoBiz extends BaseBiz<Cargomortgagedto, Map> implemen
 
     @Autowired
     private CargomortgagedtoHttpPost tHttpPost;
+
     HttpStrategy httpStrategy;
 
     @Override

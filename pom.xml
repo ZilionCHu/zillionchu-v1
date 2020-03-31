@@ -13,6 +13,7 @@
         <module>zillionchu-server</module>
         <module>zillionchu-test</module>
         <module>zillionchu-cake</module>
+        <module>zillionchu-stop</module>
     </modules>
 
     <parent>
